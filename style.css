@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-weight: 62.5%;
+
+  --ff-primary: 'Poppins', sans-serif;
+  --text-color: #303030;
+
+  --hue: 194;
+  --primary-color: hsl(var(--hue), 100%, 63%)
+}
+
+body {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: azure;
+}
+
+body * {
+  font-family: var(--ff-primary);
+}
+
+#app {
+  padding: 2rem;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 2.5rem 0;
+
+  h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+
+    * {
+      height: 3.2rem;
+      padding: 0 .8rem;
+      border: 1px solid #ccc;
+    }
+
+    input {
+      border-radius: .4rem 0 0 .4rem;
+    }
+
+    button {
+      background-color: var(--primary-color);
+      border-radius: 0 .4rem .4rem 0;
+      font-size: 1.6rem;
+      line-height: 0;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  border-radius: .4rem;
+  overflow: hidden;
+
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+
+  * {
+    font-size: 1.4rem;
+    color: var(--text-color);
+  }
+
+  th {
+    background: var(--primary-color);
+    text-align: left;
+    font-weight: normal;
+    padding: 1.5rem;
+  }
+
+  td {
+    padding: 1.5rem;
+    text-align: left;
+  }
+
+  tr {
+    &:nth-child(odd) {
+      background-color: #ddd;
+    }
+
+    &:nth-child(even) {
+      background-color: #eee;
+    }
+  }
+
+  td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    a {
+      text-decoration: none;
+
+      p {
+        font-weight: bold;
+      }
+    }
+
+    img {
+      width: 5rem;
+      height: 5rem;
+
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}
+
+td .remove {
+  background: none;
+  border: none;
+
+  color: red;
+
+  cursor: pointer;
+
+  transition: transform .2s ease;
+
+  &:hover {
+    transform: scale(1.4)
+  } 
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
